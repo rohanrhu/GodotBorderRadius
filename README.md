@@ -18,6 +18,10 @@ and set your borders:
 
 ![Alt text](media/tutorial-3.png)
 
+### Use with textures (`TextureRect`)
+
+You can enable/disable "Use Texture Size" (`use_texture_size`) property to use actual texture size instead of rect size with `TextureRect`.
+
 ### How to use the shader directly?
 
 If you wanna use the border radius shader directly attach it to your node and set following uniforms:

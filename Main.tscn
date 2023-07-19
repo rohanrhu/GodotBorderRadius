@@ -16,7 +16,7 @@ shader_parameter/canvas_height = 1600.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0cju"]
 bg_color = Color(0.372549, 0.117647, 0.254902, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pjgm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_boure"]
 shader = ExtResource("1_2v6bc")
 shader_parameter/radius_top_left = 10.0
 shader_parameter/radius_top_right = 10.0
@@ -25,7 +25,7 @@ shader_parameter/radius_bottom_right = 10.0
 shader_parameter/canvas_width = 1200.0
 shader_parameter/canvas_height = 1600.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p58r1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53s8e"]
 shader = ExtResource("1_2v6bc")
 shader_parameter/radius_top_left = 10.0
 shader_parameter/radius_top_right = 10.0
@@ -78,7 +78,7 @@ grow_horizontal = 2
 text = "TextureRect (Control) "
 
 [node name="GodetteSprite" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_6pjgm")
+material = SubResource("ShaderMaterial_boure")
 position = Vector2(278, 336)
 scale = Vector2(0.33, 0.33)
 texture = ExtResource("2_2mysf")
@@ -93,7 +93,7 @@ radius_bottom_left = 820
 radius_bottom_right = 50
 
 [node name="GodetteTextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_p58r1")
+material = SubResource("ShaderMaterial_53s8e")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.485
@@ -116,3 +116,4 @@ radius_top_left = 50
 radius_top_right = 600
 radius_bottom_left = 630
 radius_bottom_right = 50
+use_texture_size = true

@@ -11,6 +11,8 @@ class_name BorderRadius
 @export var radius_bottom_left: int = 10
 @export var radius_bottom_right: int = 10
 
+@export var use_texture_size = false
+
 var shader = preload("./BorderRadius.gdshader")
 
 @onready var shader_material = ShaderMaterial.new()
@@ -36,7 +38,10 @@ func _process(_delta: float) -> void:
 	if nParent is Node2D:
 		parent_size = nParent.get_rect().size
 	elif nParent is TextureRect:
-		parent_size = nParent.texture.get_size()
+		if use_texture_size:
+			parent_size = nParent.texture.get_size()
+		else:
+			parent_size = nParent.size
 	elif nParent is Control:
 		parent_size = nParent.size
 	else:
