@@ -18,7 +18,7 @@ and set your borders:
 
 ![Alt text](media/tutorial-3.png)
 
-### How to use the shader directly?
+### How to use the shader directly?
 
 If you wanna use the border radius shader directly attach it to your node and set following uniforms:
 
