@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=3 uid="uid://dywv4qmocq2ya"]
+
+[ext_resource type="Shader" path="res://BorderRadius/BorderRadius.gdshader" id="1_2v6bc"]
+[ext_resource type="Texture2D" uid="uid://c5nlchijlil0b" path="res://Godette.jpg" id="2_2mysf"]
+[ext_resource type="Script" path="res://BorderRadius/BorderRadius.gd" id="3_08ceu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jarv1"]
+shader = ExtResource("1_2v6bc")
+shader_parameter/radius_top_left = 10.0
+shader_parameter/radius_top_right = 10.0
+shader_parameter/radius_bottom_left = 10.0
+shader_parameter/radius_bottom_right = 10.0
+shader_parameter/canvas_width = 1200.0
+shader_parameter/canvas_height = 1600.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0cju"]
+bg_color = Color(0.372549, 0.117647, 0.254902, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pjgm"]
+shader = ExtResource("1_2v6bc")
+shader_parameter/radius_top_left = 10.0
+shader_parameter/radius_top_right = 10.0
+shader_parameter/radius_bottom_left = 10.0
+shader_parameter/radius_bottom_right = 10.0
+shader_parameter/canvas_width = 1200.0
+shader_parameter/canvas_height = 1600.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p58r1"]
+shader = ExtResource("1_2v6bc")
+shader_parameter/radius_top_left = 10.0
+shader_parameter/radius_top_right = 10.0
+shader_parameter/radius_bottom_left = 10.0
+shader_parameter/radius_bottom_right = 10.0
+shader_parameter/canvas_width = 1200.0
+shader_parameter/canvas_height = 1600.0
+
+[node name="Main" type="Control"]
+material = SubResource("ShaderMaterial_jarv1")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0cju")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.091
+offset_left = 178.0
+offset_top = 29.0
+offset_right = -275.0
+offset_bottom = -3.968
+grow_horizontal = 2
+text = "Sprite (Node2D)"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.091
+offset_left = 150.0
+offset_top = 29.0
+offset_right = -256.0
+offset_bottom = -3.968
+grow_horizontal = 2
+text = "TextureRect (Control) "
+
+[node name="GodetteSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6pjgm")
+position = Vector2(278, 336)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_2mysf")
+
+[node name="BorderRadius" type="Control" parent="GodetteSprite"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_08ceu")
+radius_top_left = 50
+radius_top_right = 480
+radius_bottom_left = 820
+radius_bottom_right = 50
+
+[node name="GodetteTextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_p58r1")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 51.28
+offset_top = 72.0
+offset_right = -57.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2mysf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BorderRadius" type="Control" parent="GodetteTextureRect"]
+anchors_preset = 0
+script = ExtResource("3_08ceu")
+radius_top_left = 50
+radius_top_right = 600
+radius_bottom_left = 630
+radius_bottom_right = 50
